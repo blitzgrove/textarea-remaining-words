@@ -1,0 +1,20 @@
+<form [formGroup]="textareaForm">
+  <textarea 
+    formControlName="textinput"
+    (keyup)="wordCounter()" 
+    id="wmd-input" 
+    name="post-text" 
+    class="wmd-input s-input bar0 js-post-body-field processed" 
+    data-post-type-id="2" 
+    cols="92" rows="15" 
+    tabindex="101" 
+    data-min-length=""
+    oncopy="return false;" 
+    onpaste="return false;" 
+    oncut="return false;"></textarea>
+</form>
+<div style="font-style: italic;">
+  {{ remainingWords }} words remaining...
+</div>
+<br>
+{{textareaForm?.value | json}}
